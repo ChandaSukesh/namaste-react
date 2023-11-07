@@ -42,7 +42,24 @@
  **********/
 
 // here if we have siblings that is h1 and h2 are siblings to child div, so we need to place them in array. Example is down code
+// episode 1
 // If only one sibling is there then there is no need to keep in array. Example is above code.
+// const parent = React.createElement(
+//   "div",
+//   { id: "parent" },
+//   React.createElement("div", { id: "child" }, [
+//     React.createElement("h1", {}, "Im an h1 tag"),
+//     React.createElement("h2", {}, "Im an h2 tag"),
+//   ])
+// );
+
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(parent);
+
+// episode 2
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 const parent = React.createElement(
   "div",
   { id: "parent" },

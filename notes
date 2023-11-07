@@ -1,0 +1,19 @@
+// To install packages:
+
+// to install parcel
+//  npm install -D parcel
+// here -D means dev dependencies.
+
+// to execute the parcel.
+// npx parcel ./index.html
+
+// to install react
+// npm install react
+
+// to install react-dom
+// npm install react-dom
+
+// to build production ready app using parcel
+// npx parcel build ./index.html
+
+//browserslist simply write manually it off.

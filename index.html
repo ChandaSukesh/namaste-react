@@ -37,9 +37,14 @@
 
     <!-- here down, app.js file should be imported after importing script files, otherwise error would be thrown -->
     <!-- CDN LINKS(React) -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <!-- <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="./App.js"></script>
+    <script src="./App.js"></script> -->
+
+    <!--  removing cdn links using them from npm-->
+    <script type="module" src="./App.js"></script>
+    <!-- written type="module" becoz in app.js we written import statements, normally js files have no import statements " -->
+
 </body>
 </html>
 

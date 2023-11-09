@@ -5,15 +5,20 @@
 // here -D means dev dependencies.
 
 // to execute the parcel.
-// npx parcel ./index.html
+// npx parcel ./index.html (or)
+// after writing in script tags in package.json
+// npm run start or npm start
 
 // to install react
 // npm install react
 
 // to install react-dom
-// npm install react-dom
+// npm install react-dom 
 
 // to build production ready app using parcel
-// npx parcel build ./index.html
+// npx parcel build ./index.html (or)
+// after writing in script tags in package.json
+// npm run build 
+
 
 //browserslist simply write manually it off.

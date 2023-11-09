@@ -57,17 +57,50 @@
 // root.render(parent);
 
 // episode 2
+// import React from "react";
+// import ReactDOM from "react-dom/client";
+
+// const parent = React.createElement(
+//   "div",
+//   { id: "parent" },
+//   React.createElement("div", { id: "child" }, [
+//     React.createElement("h1", {}, "Im an h1 tag"),
+//     React.createElement("h2", {}, "Im an h2 tag"),
+//   ])
+// );
+
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(parent);
+
+// episode 3
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const parent = React.createElement(
-  "div",
-  { id: "parent" },
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", {}, "Im an h1 tag"),
-    React.createElement("h2", {}, "Im an h2 tag"),
-  ])
-);
+// jsx example illustration
+// const jsxHeading = <h1>This is JSX h1 tag</h1>;
+// this jsxHeading object is same as object which we got when we created by using React.createElement
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(jsxHeading);
+
+// react element
+const title = <h1>Hello</h1>;
+const TitleFn = () => <h2>Bye!-Function</h2>;
+
+// functional based component illustration
+const HeadingComp = () => {
+  return (
+    <div>
+      {/* wrapping react element inside component */}
+      {title}
+      {/* below three are same */}
+      <TitleFn />
+      <TitleFn></TitleFn>
+      {TitleFn()}
+
+      <h1>Sukesh-Functional based Component</h1>
+    </div>
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+root.render(<HeadingComp />);

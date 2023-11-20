@@ -109,25 +109,46 @@
 
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import About from "./components/About";
 import PageNotFound from "./components/PageNotFound";
 import Contact from "./components/Contact";
+import Header from "./components/Header";
+import Body from "./components/Body";
+
+const AppLayout = () => {
+  return (
+    <>
+      <Header />
+      {/* based on route this below body component should be updated */}
+      {/* <Body /> */}
+      {/* outlet is used because in which page we are based on route then that children element would be called. */}
+      <Outlet />
+    </>
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const appRouter = createBrowserRouter([
   {
     path: "/",
-    element: <About />,
+    element: <AppLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Body />,
+      },
+
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+    ],
     errorElement: <PageNotFound />,
-  },
-  {
-    path: "/about",
-    element: <About />,
-  },
-  {
-    path: "/contact",
-    element: <Contact />,
   },
 ]);
 

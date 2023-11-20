@@ -22,3 +22,6 @@
 
 
 //browserslist simply write manually it off.
+
+//to install react router dom for routing
+// npm i react-router-dom

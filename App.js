@@ -73,8 +73,8 @@
 // root.render(parent);
 
 // episode 3
-import React from "react";
-import ReactDOM from "react-dom/client";
+// import React from "react";
+// import ReactDOM from "react-dom/client";
 
 // jsx example illustration
 // const jsxHeading = <h1>This is JSX h1 tag</h1>;
@@ -83,24 +83,54 @@ import ReactDOM from "react-dom/client";
 // root.render(jsxHeading);
 
 // react element
-const title = <h1>Hello</h1>;
-const TitleFn = () => <h2>Bye!-Function</h2>;
+// const title = <h1>Hello</h1>;
+// const TitleFn = () => <h2>Bye!-Function</h2>;
 
 // functional based component illustration
-const HeadingComp = () => {
-  return (
-    <div>
-      {/* wrapping react element inside component */}
-      {title}
-      {/* below three are same */}
-      <TitleFn />
-      <TitleFn></TitleFn>
-      {TitleFn()}
+// const HeadingComp = () => {
+//   return (
+//     <div>
+//       {/* wrapping react element inside component */}
+//       {title}
+//       {/* below three are same */}
+//       <TitleFn />
+//       <TitleFn></TitleFn>
+//       {TitleFn()}
 
-      <h1>Sukesh-Functional based Component</h1>
-    </div>
-  );
-};
+//       <h1>Sukesh-Functional based Component</h1>
+//     </div>
+//   );
+// };
+
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(<HeadingComp />);
+
+//episode 6
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import About from "./components/About";
+import PageNotFound from "./components/PageNotFound";
+import Contact from "./components/Contact";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<HeadingComp />);
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <About />,
+    errorElement: <PageNotFound />,
+  },
+  {
+    path: "/about",
+    element: <About />,
+  },
+  {
+    path: "/contact",
+    element: <Contact />,
+  },
+]);
+
+const rootProvider = <RouterProvider router={appRouter} />;
+
+root.render(rootProvider);
